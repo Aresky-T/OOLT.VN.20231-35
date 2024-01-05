@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP.GUI.Home.HomeController">
+    <children>
+        <StackPane prefHeight="480.0" prefWidth="400.0">
+            <children>
+                <ImageView fitHeight="278.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@LipidVirus.png" />
+                    </image>
+                </ImageView>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="136.0" layoutY="388.0" mnemonicParsing="false" onAction="#lipidBtn" prefHeight="46.0" prefWidth="127.0" text="Select" textFill="#1e1f20">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Button>
+                        <Text layoutX="170.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lipid">
+                            <font>
+                                <Font size="28.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+            </children>
+        </StackPane>
+        <StackPane layoutX="400.0" prefHeight="480.0" prefWidth="400.0">
+            <children>
+                <ImageView fitHeight="480.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@LipidVirus.png" />
+                    </image>
+                </ImageView>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="135.0" layoutY="384.0" mnemonicParsing="false" onAction="#nonLipidBtn" prefHeight="46.0" prefWidth="127.0" text="Select">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Button>
+                        <Text layoutX="143.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NonLipid">
+                            <font>
+                                <Font size="28.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+            </children>
+        </StackPane>
+        <Button layoutX="250.0" layoutY="511.0" mnemonicParsing="false" onAction="#exitBtn" prefHeight="46.0" prefWidth="300.0" text="EXIT" textFill="#1e1f20">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
