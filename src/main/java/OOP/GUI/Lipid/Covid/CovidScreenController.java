@@ -2,6 +2,7 @@ package OOP.GUI.Lipid.Covid;
 
 import OOP.GUI.Home.HomeController;
 import OOP.Main;
+import OOP.Virus.Virus;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CovidScreenController implements Initializable {
+    private Virus virus= new Virus();
     MediaPlayer mediaPlayer;
     @FXML
     private ImageView imageView;
@@ -82,16 +84,16 @@ public class CovidScreenController implements Initializable {
     }
     private void setupImageView() {
         // Đường dẫn đến hình ảnh
-        String imagePath = "D:\\D\\intellij\\OOP_Project\\OOP_Project_1\\src\\main\\resources\\OOP\\GUI\\Lipid\\Covid\\Covid.png"; // Thay đổi đường dẫn này
-
+       // String imagePath = "D:\\D\\intellij\\OOP_Project\\OOP_Project_1\\src\\main\\resources\\OOP\\GUI\\Lipid\\Covid\\Covid.png"; // Thay đổi đường dẫn này
+String imagePath = virus.getAnh();
         // Tạo một đối tượng Image mới và thiết lập nó cho imageView
          image = new Image(imagePath);
         imageView.setImage(image);
     }
     private void setupMediaView() {
         // Đường dẫn đến tệp video
-        String videoPath = "src/main/resources/OOP/GUI/Lipid/Covid/animation.mp4"; // Thay đổi đường dẫn này
-
+       // String videoPath = "src/main/resources/OOP/GUI/Lipid/Covid/animation.mp4"; // Thay đổi đường dẫn này
+        String videoPath = virus.getVideo();
         // Tạo đối tượng Media và MediaPlayer
         Media media = new Media(new File(videoPath).toURI().toString());
          mediaPlayer = new MediaPlayer(media);
@@ -104,9 +106,7 @@ public class CovidScreenController implements Initializable {
     }
 
 public String getDescription() {
-    return "Length: "  + "\n" +
-            "Width: "  + "\n" +
-            "Structure: " + "\n";
+    return virus.toString();
 
 }
 
