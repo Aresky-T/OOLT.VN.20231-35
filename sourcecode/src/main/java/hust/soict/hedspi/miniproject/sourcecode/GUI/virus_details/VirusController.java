@@ -9,7 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
@@ -31,7 +32,8 @@ public class VirusController implements Initializable {
     public ImageView imageView;
 
     @FXML
-    private TextArea text;
+    public ListView<Label> virusDetailsListView;
+
     MediaPlayer mediaPlayer;
 
     @FXML
@@ -48,7 +50,8 @@ public class VirusController implements Initializable {
     @FXML
     public void showVirusStructure(ActionEvent actionEvent) {
         imageView.setVisible(true);
-        text.setVisible(true);
+        virusDetailsListView.setVisible(true);
+
         mediaView.setVisible(false);
         mediaPlayer.stop();
     }
@@ -56,7 +59,8 @@ public class VirusController implements Initializable {
     @FXML
     public void showVirusInfection(ActionEvent actionEvent) {
         imageView.setVisible(false);
-        text.setVisible(false);
+        virusDetailsListView.setVisible(false);
+
         mediaView.setVisible(true);
         mediaPlayer.play();
     }
@@ -98,9 +102,24 @@ public class VirusController implements Initializable {
         setupMediaView(virus);
         mediaPlayer.stop();
 
-        text.setText(getDescription(virus));
+        displayVirusDetails(virus);
         imageView.setVisible(true);
-        text.setVisible(true);
+        virusDetailsListView.setVisible(true);
         mediaView.setVisible(false);
+    }
+
+    private void displayVirusDetails(Virus selectedVirus) {
+        if (selectedVirus != null) {
+            // Tạo danh sách Label để hiển thị thông tin chi tiết của virus
+            Label nameLabel = new Label("Tên: " + selectedVirus.getName());
+            Label geneticMaterialLabel = new Label("Gen di truyền: " + selectedVirus.getGeneticMaterial());
+            Label proteinLabel = new Label("Protein: " + selectedVirus.getProtein());
+            Label size = new Label("Kích thước : " + selectedVirus.getSize() + " nanomet");
+            Label shape = new Label("Hình dạng: " + selectedVirus.getShape().getShape());
+            Label type = new Label("Chủng loại: " + selectedVirus.getType().getType());
+
+            // Thêm các Label vào ListView
+            virusDetailsListView.getItems().setAll(nameLabel, geneticMaterialLabel, proteinLabel, size, shape, type);
+        }
     }
 }
