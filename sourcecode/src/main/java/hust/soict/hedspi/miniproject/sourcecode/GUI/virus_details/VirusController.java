@@ -2,6 +2,7 @@ package hust.soict.hedspi.miniproject.sourcecode.GUI.virus_details;
 
 import hust.soict.hedspi.miniproject.sourcecode.GUI.home.HomeController;
 import hust.soict.hedspi.miniproject.sourcecode.Main;
+import hust.soict.hedspi.miniproject.sourcecode.entity.LipitVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,7 +33,7 @@ public class VirusController implements Initializable {
     public ImageView imageView;
 
     @FXML
-    public ListView<Label> virusDetailsListView;
+    public ListView<Label> virusStructureView;
 
     MediaPlayer mediaPlayer;
 
@@ -50,7 +51,7 @@ public class VirusController implements Initializable {
     @FXML
     public void showVirusStructure(ActionEvent actionEvent) {
         imageView.setVisible(true);
-        virusDetailsListView.setVisible(true);
+        virusStructureView.setVisible(true);
 
         mediaView.setVisible(false);
         mediaPlayer.stop();
@@ -59,7 +60,7 @@ public class VirusController implements Initializable {
     @FXML
     public void showVirusInfection(ActionEvent actionEvent) {
         imageView.setVisible(false);
-        virusDetailsListView.setVisible(false);
+        virusStructureView.setVisible(false);
 
         mediaView.setVisible(true);
         mediaPlayer.play();
@@ -82,6 +83,7 @@ public class VirusController implements Initializable {
     private void setupMediaView(Virus virus) {
         // Đường dẫn đến tệp video
         String videoPath = virus.infect();
+        System.out.println(videoPath);
         // Tạo đối tượng Media và MediaPlayer
         Media media = new Media(new File(videoPath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
@@ -93,33 +95,32 @@ public class VirusController implements Initializable {
         mediaPlayer.play();
     }
 
-    public String getDescription(Virus virus) {
-        return virus.toString();
-    }
-
     public void setSelectedVirus(Virus virus){
         setupImageView(virus);
         setupMediaView(virus);
         mediaPlayer.stop();
+        setVirusStructureDetails(virus);
 
-        displayVirusDetails(virus);
         imageView.setVisible(true);
-        virusDetailsListView.setVisible(true);
+        virusStructureView.setVisible(true);
         mediaView.setVisible(false);
     }
 
-    private void displayVirusDetails(Virus selectedVirus) {
+    private void setVirusStructureDetails(Virus selectedVirus) {
         if (selectedVirus != null) {
+            // Xác định chủng loại virus
+            String virusType = (selectedVirus instanceof LipitVirus) ? "Có vỏ lipid" : "Không có vỏ lipit";
+
             // Tạo danh sách Label để hiển thị thông tin chi tiết của virus
             Label nameLabel = new Label("Tên: " + selectedVirus.getName());
-            Label geneticMaterialLabel = new Label("Gen di truyền: " + selectedVirus.getGeneticMaterial());
-            Label proteinLabel = new Label("Protein: " + selectedVirus.getProtein());
-            Label size = new Label("Kích thước : " + selectedVirus.getSize() + " nanomet");
-            Label shape = new Label("Hình dạng: " + selectedVirus.getShape().getShape());
-            Label type = new Label("Chủng loại: " + selectedVirus.getType().getType());
+            Label geneticMaterialLabel = new Label("Gen di truyền: " + selectedVirus.getAcidNucleic());
+            Label proteinLabel = new Label("Protein vỏ capsid: " + selectedVirus.getCapsid());
+            Label sizeLabel = new Label("Kích thước : " + selectedVirus.getSize() + " nanomet");
+            Label shapeLabel = new Label("Hình dạng: " + selectedVirus.getShape().getShape());
+            Label typeLabel = new Label("Chủng loại: " + virusType);
 
             // Thêm các Label vào ListView
-            virusDetailsListView.getItems().setAll(nameLabel, geneticMaterialLabel, proteinLabel, size, shape, type);
+            virusStructureView.getItems().setAll(nameLabel, geneticMaterialLabel, proteinLabel, sizeLabel, shapeLabel, typeLabel);
         }
     }
 }

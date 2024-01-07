@@ -2,8 +2,9 @@ package hust.soict.hedspi.miniproject.sourcecode.GUI.home;
 
 import hust.soict.hedspi.miniproject.sourcecode.GUI.virus_list.VirusListController;
 import hust.soict.hedspi.miniproject.sourcecode.Main;
+import hust.soict.hedspi.miniproject.sourcecode.entity.LipitVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.NonLipidVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
-import hust.soict.hedspi.miniproject.sourcecode.entity.VirusType;
 import hust.soict.hedspi.miniproject.sourcecode.service.VirusDataService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +29,7 @@ public class HomeController implements Initializable {
     public void chooseLipidVirus(ActionEvent actionEvent) throws IOException {
         List<Virus> lipitViruses = VirusDataService.getInstance().getVirusList()
                 .stream()
-                .filter(virus -> virus.getType() == VirusType.LIPIT)
+                .filter(virus -> virus instanceof LipitVirus)
                 .toList();
 
         FXMLLoader fxmlLoader = loadVirusListFXMLFile();
@@ -48,7 +49,7 @@ public class HomeController implements Initializable {
     public void chooseNonLipidVirus(ActionEvent actionEvent) throws IOException {
         List<Virus> lipitViruses = VirusDataService.getInstance().getVirusList()
                 .stream()
-                .filter(virus -> virus.getType() == VirusType.NON_LIPIT)
+                .filter(virus -> virus instanceof NonLipidVirus)
                 .toList();
 
         FXMLLoader fxmlLoader = loadVirusListFXMLFile();

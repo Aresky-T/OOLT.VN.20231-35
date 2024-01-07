@@ -1,6 +1,5 @@
 package hust.soict.hedspi.miniproject.sourcecode;
 
-import hust.soict.hedspi.miniproject.sourcecode.GUI.home.HomeController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class Main extends Application {
     public static final String APP_TITLE = "Lập trình hướng đối tượng - mini project G35";

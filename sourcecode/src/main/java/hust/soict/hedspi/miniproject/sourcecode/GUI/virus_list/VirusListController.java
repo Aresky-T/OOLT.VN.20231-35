@@ -1,13 +1,9 @@
 package hust.soict.hedspi.miniproject.sourcecode.GUI.virus_list;
 
-import com.almasb.fxgl.core.reflect.ReflectionUtils;
 import hust.soict.hedspi.miniproject.sourcecode.GUI.home.HomeController;
 import hust.soict.hedspi.miniproject.sourcecode.GUI.virus_details.VirusController;
 import hust.soict.hedspi.miniproject.sourcecode.Main;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
-import hust.soict.hedspi.miniproject.sourcecode.entity.VirusShape;
-import hust.soict.hedspi.miniproject.sourcecode.entity.VirusType;
-import hust.soict.hedspi.miniproject.sourcecode.service.VirusDataService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -90,12 +86,6 @@ public class VirusListController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Virus List Controller is initialized.");
-
-        // Lấy danh sách virus từ VirusDataService hoặc model
-//        List<Virus> allViruses = VirusDataService.getInstance().getVirusList();
-
-        // Show virus list
-//        displayVirusList(allViruses);
     }
 
     public void displayVirusList(List<Virus> viruses){
@@ -103,6 +93,8 @@ public class VirusListController implements Initializable {
         buttonListView.getItems().clear();
         for(Virus virus : viruses){
             Button virusButton = new Button(virus.getName());
+            virusButton.setPrefHeight(50);
+            virusButton.setStyle("-fx-font-size: 20px; -fx-font-weight: 600");
             virusButton.setOnAction(this::chooseVirus);
             buttonListView.getItems().add(virusButton);
         }

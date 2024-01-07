@@ -1,8 +1,11 @@
 package hust.soict.hedspi.miniproject.sourcecode.service;
 
+import hust.soict.hedspi.miniproject.sourcecode.entity.Lipit.CoronaVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.Lipit.HivVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.Lipit.RotaVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.NonLipit.PolioVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.VirusShape;
-import hust.soict.hedspi.miniproject.sourcecode.entity.VirusType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,42 +15,48 @@ public class VirusDataService {
     private final List<Virus> virusList = new ArrayList<>();
 
     private VirusDataService(){
-        Virus covid = new Virus();
-        covid.setName("Corona virus");
-        covid.setGeneticMaterial("ARN");
-        covid.setProtein("Spike (S), Envelope (E), Membrane (M) và Nucleo capsid (N)");
-        covid.setSize(125);
-        covid.setShape(VirusShape.XOAN_OC);
-        covid.setType(VirusType.LIPIT);
-        covid.setImageURL("https://biochain.vn/wp-content/uploads/2020/03/Coronavirus-anh-huong-den-nong-san-va-thuc-pham.jpg");
+        Virus covid = new CoronaVirus(
+                "Virus Covid-19",
+                "ARN",
+                "Spike (S), Envelope (E), Membrane (M) và Nucleo capsid (N)",
+                125,
+                VirusShape.XOAN_OC,
+                "https://biochain.vn/wp-content/uploads/2020/03/Coronavirus-anh-huong-den-nong-san-va-thuc-pham.jpg",
+                "",
+                ""
+                );
 
-        Virus rotavirus = new Virus();
-        rotavirus.setName("Rotavirus");
-        rotavirus.setGeneticMaterial("ARN");
-        rotavirus.setProtein("Capsid protein");
-        rotavirus.setSize(70);
-        rotavirus.setShape(VirusShape.HINH_CAU);
-        rotavirus.setType(VirusType.LIPIT);
-        rotavirus.setImageURL("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Rotavirus.jpg/280px-Rotavirus.jpg");
+        Virus rotavirus = new RotaVirus(
+                "Virus rota",
+                "ARN",
+                "Capsid protein: VP2, VP4, VP6, VP7",
+                70,
+                VirusShape.HINH_CAU,
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Rotavirus.jpg/280px-Rotavirus.jpg",
+                "",
+                "");
 
-        Virus hivVirus = new Virus();
-        hivVirus.setName("HIV Virus");
-        hivVirus.setGeneticMaterial("ARN");
-        hivVirus.setProtein("Enveloped protein");
-        hivVirus.setSize(120);
-        hivVirus.setShape(VirusShape.HINH_CAU);
-        hivVirus.setType(VirusType.LIPIT);
-        hivVirus.setImageURL("https://www.shutterstock.com/image-illustration/3d-rendered-hiv-virus-blood-260nw-559306498.jpg");
+        Virus hivVirus = new HivVirus(
+                "Virus HIV",
+                "ARN",
+                "Capsid protein: FEZ1 và BICD2", 120,
+                VirusShape.HINH_CAU,
+                "https://cdn.tgdd.vn/Files/2017/12/12/1049670/hiv-aids-1_800x522.jpg",
+                "",
+                "");
 
-        Virus nonLipitVirus1 = new Virus();
-        nonLipitVirus1.setName("Virus không vỏ lipit 1");
-        nonLipitVirus1.setType(VirusType.NON_LIPIT);
-
+        Virus polioVirus = new PolioVirus(
+                "Virus polio",
+                "ARN", "Capsid protein:VP1, VP2, VP3, VP4",
+                30,
+                VirusShape.HINH_CAU,
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Polio-3-chains.png/220px-Polio-3-chains.png"
+        );
 
         virusList.add(covid);
         virusList.add(rotavirus);
         virusList.add(hivVirus);
-        virusList.add(nonLipitVirus1);
+        virusList.add(polioVirus);
     }
 
     public static VirusDataService getInstance(){

@@ -4,33 +4,24 @@ import java.util.List;
 
 public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
     private String name;
-    private String geneticMaterial; // Acid nucleic
-    private String protein; // Protein của virus
+    private String acidNucleic; // Acid nucleic
+    private String capsid; // Protein của virus
     private Integer size; // Kích thước của virus
     private VirusShape shape; // Hình dạng của virus
-    private VirusType type; // Phân loại virus (Có vỏ hoặc không có vỏ lipit)
+    // private VirusType type; // Phân loại virus (Có vỏ hoặc không có vỏ lipit)
     private String imageURL; // Link ảnh virus
     private List<Disease> associatedDiseases; // Các bệnh gây ra bở virus lên vật chủ
 
-    public Virus() {
-    }
-
-    public Virus(String geneticMaterial, String protein) {
-        this.geneticMaterial = geneticMaterial;
-        this.protein = protein;
-    }
-
-    public Virus(String geneticMaterial, String protein, List<Disease> associatedDiseases) {
-        this.geneticMaterial = geneticMaterial;
-        this.protein = protein;
-        this.associatedDiseases = associatedDiseases;
-    }
-
-    public Virus(int size, VirusShape shape, VirusType type, String imageURL) {
+    public Virus(String name, String acidNucleic, String capsid, Integer size, VirusShape shape, String imageURL) {
+        this.name = name;
+        this.acidNucleic = acidNucleic;
+        this.capsid = capsid;
         this.size = size;
         this.shape = shape;
-        this.type = type;
         this.imageURL = imageURL;
+    }
+
+    public Virus() {
     }
 
     public String getName() {
@@ -41,20 +32,20 @@ public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
         this.name = name;
     }
 
-    public String getGeneticMaterial() {
-        return geneticMaterial;
+    public String getAcidNucleic() {
+        return acidNucleic;
     }
 
-    public void setGeneticMaterial(String geneticMaterial) {
-        this.geneticMaterial = geneticMaterial;
+    public void setAcidNucleic(String acidNucleic) {
+        this.acidNucleic = acidNucleic;
     }
 
-    public String getProtein() {
-        return protein;
+    public String getCapsid() {
+        return capsid;
     }
 
-    public void setProtein(String protein) {
-        this.protein = protein;
+    public void setCapsid(String capsid) {
+        this.capsid = capsid;
     }
 
     public Integer getSize() {
@@ -71,14 +62,6 @@ public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
 
     public void setShape(VirusShape shape) {
         this.shape = shape;
-    }
-
-    public VirusType getType() {
-        return type;
-    }
-
-    public void setType(VirusType type) {
-        this.type = type;
     }
 
     public String getImageURL() {
@@ -128,7 +111,9 @@ public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
     };
 
     public String toString(){
-        return "Virus: " + "[ type: " + this.type + ", shape: " + this.shape + " ]";
+        return "Virus | name: " + this.name
+                + ", gen: " + this.acidNucleic + ", capsid: " + this.capsid
+                + ", size: " + this.size + ", shape: " + this.shape;
     }
 
 
