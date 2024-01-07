@@ -25,4 +25,10 @@ public class LipidVirus extends Virus {
                 "lipidEnvelope='" + '\''
                 ;
     }
+
+    @Override
+    public String infect() {
+        System.out.println("Enveloped virus infects a cell via endocytosis.");
+        return "";
+    }
 }

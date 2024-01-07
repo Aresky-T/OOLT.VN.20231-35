@@ -25,6 +25,7 @@ public class HIV extends LipidVirus {
     }
     @Override
     public String infect() {
-        return "src/main/resources/OOP/GUI/Lipid/Covid/animation.mp4";
+        super.infect();
+        return "src/main/resources/OOP/GUI/Lipid/HIV/hiv.mp4";
     }
 }

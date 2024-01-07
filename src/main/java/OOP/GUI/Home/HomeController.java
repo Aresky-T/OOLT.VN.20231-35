@@ -3,6 +3,7 @@ package OOP.GUI.Home;
 
 
 import OOP.GUI.Lipid.LipidVirusController;
+import OOP.GUI.NonLipid.NonLipidVirusController;
 import OOP.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,8 +62,13 @@ public class HomeController {
 
     }
     @FXML
-    void nonLipidBtn(ActionEvent event) {
-
+    void nonLipidBtn(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(NonLipidVirusController.class.getResource("nonlipid.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

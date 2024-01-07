@@ -14,7 +14,7 @@
             <children>
                 <ImageView fitHeight="278.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../LipidVirus.png" />
+                        <Image url="@lipidVirus.jpg" />
                     </image>
                 </ImageView>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -37,7 +37,7 @@
             <children>
                 <ImageView fitHeight="480.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../LipidVirus.png" />
+                        <Image url="@nonlipid.jpg" />
                     </image>
                 </ImageView>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">

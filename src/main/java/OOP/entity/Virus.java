@@ -153,7 +153,7 @@ public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
     public String infect() {
         adsorption();
         penetration();
-        return "src/main/resources/hust/soict/hedspi/miniproject/sourcecode/GUI/virus_details/animation.mp4";
+        return "";
     }
 
 

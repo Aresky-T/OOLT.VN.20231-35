@@ -49,7 +49,7 @@ public class LipidVirusController {
     void HIVBtn(ActionEvent event) throws IOException {
         Virus virus= new HIV("HIV",90, VirusShape.XOAN_OC,"Capsid protein",
                "ARN",
-                "src/main/resources/OOP/GUI/Lipid/Covid/Covid.png",
+                "src/main/resources/OOP/GUI/Lipid/HIV/Structure-of-HIV.png",
                 "protect","simple lipid envelope");
 //        FXMLLoader fxmlLoader = new FXMLLoader(HIVScreenController.class.getResource("HIVScreen.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(LipidVirusController.class.getResource("lipidVirus.fxml"));
