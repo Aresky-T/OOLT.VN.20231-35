@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP.GUI.Lipid.LipidVirusController">
    <children>
       <Button layoutX="272.0" layoutY="110.0" mnemonicParsing="false" onAction="#covidBtn" prefHeight="63.0" prefWidth="256.0" text="Covid">
@@ -12,12 +11,12 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="272.0" layoutY="207.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="256.0" text="Virus2">
+      <Button layoutX="272.0" layoutY="207.0" mnemonicParsing="false" onAction="#HIVBtn" prefHeight="63.0" prefWidth="256.0" text="HIV">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="272.0" layoutY="300.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="256.0" text="Virus3">
+      <Button layoutX="272.0" layoutY="300.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="256.0" text="Ebola">
          <font>
             <Font size="20.0" />
          </font>

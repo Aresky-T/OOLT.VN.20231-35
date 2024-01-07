@@ -12,7 +12,8 @@ module org.example.oop_project_1 {
     opens OOP.GUI.Home to javafx.fxml;
     opens OOP.GUI.Lipid to javafx.fxml;
     opens OOP.GUI.Lipid.Covid to javafx.fxml;
-
+    opens OOP.GUI.Lipid.HIV to javafx.fxml;
+    opens OOP.GUI to javafx.fxml;
     opens org.example.oop_project_1 to javafx.fxml;
     exports org.example.oop_project_1;
     exports OOP;

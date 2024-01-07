@@ -3,8 +3,11 @@ package OOP.GUI.Lipid;
 
 
 import OOP.GUI.Home.HomeController;
-import OOP.GUI.Lipid.Covid.CovidScreenController;
-import OOP.Main;
+import OOP.GUI.VirusScreenController;
+import OOP.entity.Lipid.Corona;
+import OOP.entity.Lipid.HIV;
+import OOP.entity.Virus;
+import OOP.entity.VirusShape;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +21,13 @@ public class LipidVirusController {
 
     @FXML
     void covidBtn(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CovidScreenController.class.getResource("covidScreen.fxml"));
+        Virus virus= new Corona("Corona",90, VirusShape.XOAN_OC,"capsid protein",
+                "ARN",
+                "src/main/resources/OOP/GUI/Lipid/Covid/Covid.png",
+                "lipid","Complex lipid envelope");
+        FXMLLoader fxmlLoader = new FXMLLoader(VirusScreenController.class.getResource("virusScreen.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(LipidVirusController.class.getResource("lipidVirus.fxml"));
+        fxmlLoader.setController(new VirusScreenController(virus));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Hello!");
@@ -37,5 +45,20 @@ public class LipidVirusController {
         stage.setScene(scene);
         stage.show();
     }
-
+    @FXML
+    void HIVBtn(ActionEvent event) throws IOException {
+        Virus virus= new HIV("HIV",90, VirusShape.XOAN_OC,"Capsid protein",
+               "ARN",
+                "src/main/resources/OOP/GUI/Lipid/Covid/Covid.png",
+                "protect","simple lipid envelope");
+//        FXMLLoader fxmlLoader = new FXMLLoader(HIVScreenController.class.getResource("HIVScreen.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(LipidVirusController.class.getResource("lipidVirus.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(VirusScreenController.class.getResource("virusScreen.fxml"));
+        fxmlLoader.setController(new VirusScreenController(virus));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
