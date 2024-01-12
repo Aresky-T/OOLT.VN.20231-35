@@ -1,9 +1,9 @@
 package hust.soict.hedspi.miniproject.sourcecode.service;
 
-import hust.soict.hedspi.miniproject.sourcecode.entity.Lipit.CoronaVirus;
-import hust.soict.hedspi.miniproject.sourcecode.entity.Lipit.HivVirus;
-import hust.soict.hedspi.miniproject.sourcecode.entity.Lipit.RotaVirus;
-import hust.soict.hedspi.miniproject.sourcecode.entity.NonLipit.PolioVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.Lipid.CoronaVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.Lipid.HivVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.Lipid.RotaVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.NonLipid.PolioVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.VirusShape;
 

@@ -8,7 +8,6 @@ public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
     private String capsid; // Protein của virus
     private Integer size; // Kích thước của virus
     private VirusShape shape; // Hình dạng của virus
-    // private VirusType type; // Phân loại virus (Có vỏ hoặc không có vỏ lipit)
     private String imageURL; // Link ảnh virus
     private List<Disease> associatedDiseases; // Các bệnh gây ra bở virus lên vật chủ
 

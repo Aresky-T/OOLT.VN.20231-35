@@ -2,7 +2,7 @@ package hust.soict.hedspi.miniproject.sourcecode.GUI.virus_details;
 
 import hust.soict.hedspi.miniproject.sourcecode.GUI.home.HomeController;
 import hust.soict.hedspi.miniproject.sourcecode.Main;
-import hust.soict.hedspi.miniproject.sourcecode.entity.LipitVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.LipidVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -109,7 +109,7 @@ public class VirusController implements Initializable {
     private void setVirusStructureDetails(Virus selectedVirus) {
         if (selectedVirus != null) {
             // Xác định chủng loại virus
-            String virusType = (selectedVirus instanceof LipitVirus) ? "Có vỏ lipid" : "Không có vỏ lipit";
+            String virusType = (selectedVirus instanceof LipidVirus) ? "Có vỏ lipid" : "Không có vỏ lipit";
 
             // Tạo danh sách Label để hiển thị thông tin chi tiết của virus
             Label nameLabel = new Label("Tên: " + selectedVirus.getName());
