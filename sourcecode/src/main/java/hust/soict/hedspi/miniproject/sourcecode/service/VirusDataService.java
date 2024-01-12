@@ -4,6 +4,7 @@ import hust.soict.hedspi.miniproject.sourcecode.entity.Lipid.CoronaVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Lipid.HivVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Lipid.RotaVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.NonLipid.PolioVirus;
+import hust.soict.hedspi.miniproject.sourcecode.entity.NonLipid.RhinoVirus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.Virus;
 import hust.soict.hedspi.miniproject.sourcecode.entity.VirusShape;
 
@@ -53,10 +54,20 @@ public class VirusDataService {
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Polio-3-chains.png/220px-Polio-3-chains.png"
         );
 
+        Virus rhinoVirus = new RhinoVirus(
+                "Rhino Virus",
+                "ARN",
+                "Capsid protein : VP1",
+                50,
+                VirusShape.XOAN_OC,
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Rhinovirus.PNG/800px-Rhinovirus.PNG"
+        );
+
         virusList.add(covid);
         virusList.add(rotavirus);
         virusList.add(hivVirus);
         virusList.add(polioVirus);
+        virusList.add(rhinoVirus);
     }
 
     public static VirusDataService getInstance(){
