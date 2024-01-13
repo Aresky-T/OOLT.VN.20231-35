@@ -13,4 +13,10 @@ public class PolioVirus extends NonLipidVirus {
     public String toString() {
         return "Polio " + super.toString();
     }
+
+    @Override
+    public  String infect(){
+        super.infect();
+        return "src/main/resources/hust/soict/hedspi/miniproject/sourcecode/GUI/virus_details/PolioVirus Mechanism.mp4";
+    }
 }
