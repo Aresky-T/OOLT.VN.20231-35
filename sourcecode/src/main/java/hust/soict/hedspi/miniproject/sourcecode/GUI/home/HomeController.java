@@ -83,10 +83,40 @@ public class HomeController implements Initializable {
 
     @FXML
     public void showBasicUsage(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Hướng dẫn sử dụng ");
+        alert.setContentText("Chọn loại virus -> chọn Virus cụ thể-> chọn 2 chức năng để hiện cấu trúc và cách virus lây nhiễm");
+
+
+        // Xóa tất cả các nút khác ngoại trừ nút OK
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().add(ButtonType.OK);
+
+        alert.showAndWait()
+                .ifPresent(res -> {
+                    if (res == ButtonType.OK) {
+                        // Đóng cửa sổ thông báo khi nút OK được nhấn
+                        alert.close();
+                    }
+                });
     }
 
     @FXML
     public void showIntendedUse(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Mục đích dự án");
+        alert.setContentText("Tìm hiểu về Virus");
+        // Xóa tất cả các nút khác ngoại trừ nút OK
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().add(ButtonType.OK);
+
+        alert.showAndWait()
+                .ifPresent(res -> {
+                    if (res == ButtonType.OK) {
+                        // Đóng cửa sổ thông báo khi nút OK được nhấn
+                        alert.close();
+                    }
+                });
     }
 
     @Override

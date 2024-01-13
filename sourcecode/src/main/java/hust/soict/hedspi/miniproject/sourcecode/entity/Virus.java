@@ -124,7 +124,7 @@ public class Virus  implements InfectionBehavior, DiseaseCausingBehavior {
         return "src/main/resources/hust/soict/hedspi/miniproject/sourcecode/GUI/virus_details/animation.mp4";
     }
 
-
+// D:\D\intellij\OOP_Project\OOP_Project_4\sourcecode\src\main\resources\hust\soict\hedspi\miniproject\sourcecode\GUI\virus_details\animation.mp4
     // Hành vi gây bệnh
     @Override
     public void causeDisease() {
